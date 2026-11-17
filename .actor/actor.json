@@ -1,0 +1,15 @@
+{
+    "actorSpecification": 1,
+    "name": "search-autocomplete",
+    "title": "Google Autocomplete Scraper + YouTube, Amazon, DuckDuckGo",
+    "description": "Google autocomplete scraper that also reads YouTube, Amazon and DuckDuckGo: keyword suggestions from four search boxes in one run. Many seed keywords, any language and country, A-Z and question expansion, duplicates removed.",
+    "version": "0.1",
+    "buildTag": "latest","defaultMemoryMbytes": 256,"minMemoryMbytes": 256,
+    "maxMemoryMbytes": 512,
+    "dockerfile": "../Dockerfile",
+    "input": "./input_schema.json",
+    "output": "./output_schema.json",
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    }
+}

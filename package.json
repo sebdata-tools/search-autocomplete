@@ -1,0 +1,24 @@
+{
+  "name": "search-autocomplete",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Autocomplete suggestions from Google, YouTube, DuckDuckGo and Amazon in one run (Apify Actor).",
+  "main": "src/main.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node test/run_tests.mjs"
+  },
+  "dependencies": {
+    "apify": "^3.7.2",
+    "undici": "^8.12.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebdata-tools/search-autocomplete.git"
+  }
+}

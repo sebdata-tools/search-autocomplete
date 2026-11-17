@@ -1,0 +1,72 @@
+{
+    "title": "Autocomplete Suggestions input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "keywords": {
+            "title": "Seed keywords",
+            "type": "array",
+            "description": "One seed keyword per line, up to 1,000 per run.",
+            "editor": "stringList",
+            "prefill": ["running shoes", "air fryer"]
+        },
+        "engines": {
+            "title": "Search engines",
+            "type": "array",
+            "description": "Which search boxes to ask. Leave empty for all four.",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["google", "youtube", "duckduckgo", "amazon"],
+                "enumTitles": ["Google", "YouTube", "DuckDuckGo", "Amazon"]
+            },
+            "default": ["google", "youtube", "duckduckgo", "amazon"]
+        },
+        "language": {
+            "title": "Language",
+            "type": "string",
+            "description": "Language code, e.g. en, de, fr, es, ja.",
+            "editor": "textfield",
+            "default": "en"
+        },
+        "country": {
+            "title": "Country",
+            "type": "string",
+            "description": "Two-letter country code, e.g. US, GB, DE, JP. Amazon suggestions come from that country's Amazon site (US, CA, MX, BR, GB, DE, FR, IT, ES, NL, IN, JP, AU); other countries use amazon.com.",
+            "editor": "textfield",
+            "default": "US"
+        },
+        "expandAlphabet": {
+            "title": "A-Z expansion",
+            "type": "boolean",
+            "description": "Also ask for \"keyword a\", \"keyword b\" ... \"keyword z\". Finds many more long-tail suggestions (26 extra requests per keyword and engine).",
+            "default": false
+        },
+        "expandQuestions": {
+            "title": "Question expansion (English)",
+            "type": "boolean",
+            "description": "Also ask for \"how keyword\", \"what keyword\", \"why keyword\" and 9 more English question words.",
+            "default": false
+        },
+        "expandPrepositions": {
+            "title": "Preposition expansion (English)",
+            "type": "boolean",
+            "description": "Also ask for \"keyword for\", \"keyword with\", \"keyword vs\" and 6 more English connecting words.",
+            "default": false
+        },
+        "deduplicate": {
+            "title": "Remove duplicates",
+            "type": "boolean",
+            "description": "Save (and charge for) each suggestion once per engine, even if several expansions return it.",
+            "default": true
+        },
+        "proxyConfiguration": {
+            "title": "Proxy",
+            "type": "object",
+            "description": "Optional. The Actor normally works without a proxy.",
+            "editor": "proxy",
+            "sectionCaption": "Advanced"
+        }
+    },
+    "required": ["keywords"]
+}

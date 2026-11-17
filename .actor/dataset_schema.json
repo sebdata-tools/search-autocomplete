@@ -1,0 +1,36 @@
+{
+    "actorSpecification": 1,
+    "fields": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+            "seed": { "type": "string", "description": "The seed keyword from the input." },
+            "engine": { "type": "string", "description": "google, youtube, duckduckgo or amazon." },
+            "query": { "type": "string", "description": "The text sent to the engine: the seed, or the seed with an expansion." },
+            "suggestion": { "type": "string", "description": "The suggested search phrase." },
+            "position": { "type": "integer", "description": "Rank of the suggestion in the engine's answer for that query, from 1." },
+            "language": { "type": "string" },
+            "country": { "type": "string" },
+            "scrapedAt": { "type": "string", "description": "When the item was collected, ISO 8601 UTC." }
+        },
+        "required": ["seed", "engine", "query", "suggestion", "position"]
+    },
+    "views": {
+        "overview": {
+            "title": "Suggestions",
+            "transformation": {
+                "fields": ["seed", "engine", "suggestion", "position", "query"]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "seed": { "label": "Seed", "format": "text" },
+                    "engine": { "label": "Engine", "format": "text" },
+                    "suggestion": { "label": "Suggestion", "format": "text" },
+                    "position": { "label": "Position", "format": "number" },
+                    "query": { "label": "Query sent", "format": "text" }
+                }
+            }
+        }
+    }
+}
